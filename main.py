@@ -3,7 +3,6 @@ from fastapi import FastAPI,Request
 import uvicorn
 import numpy as np
 from transformers import AutoModelForSequenceClassification, AutoTokenizer, TextClassificationPipeline
-import torch
 
 app = FastAPI()
 
