@@ -10,7 +10,7 @@ app = FastAPI()
 # def read_root():
 #     return {"Hello": "World"}
 
-@api.get("/")
+@app.get("/")
 async def root(req: Request):
     return Response(status_code=200, content="OK")
 
