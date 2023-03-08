@@ -1,4 +1,4 @@
-from fastapi import FastAPI,Request
+from fastapi import FastAPI,Request, Response
 # from pydantic import BaseModel
 import uvicorn
 import numpy as np
@@ -6,10 +6,13 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer, Text
 
 app = FastAPI()
 
+# @app.get("/")
+# def read_root():
+#     return {"Hello": "World"}
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+@api.get("/")
+async def root(req: Request):
+    return Response(status_code=200, content="OK")
 
 @app.get("/hello")
 def read_root():
